@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <title>Página do Autor – Dark Fantasy & Cyberpunk</title>
 
+<meta name="description" content="Michaell M. Vianna, autor de Dark Fantasy e Ficção Científica. Conheça Zero — O Presságio da Escuridão e outras obras, sinopses e formas de contato.">
+
 <style>
 
 /* ===== BASE ===== */
@@ -35,7 +37,7 @@ body::before {
 /* ===== HEADER ===== */
 
 header {
-    padding: 50px 20px;
+    padding: 40px 20px 35px;
     text-align: center;
     background: linear-gradient(90deg, #001627, #000, #001627);
     border-bottom: 1px solid #1a1a1a;
@@ -46,6 +48,14 @@ header h1 {
     color: #73a5ff;
     text-shadow: 0 0 15px #3f5dff, 0 0 30px #1f2aff;
     animation: glowingTitle 4s ease-in-out infinite;
+    margin: 0;
+}
+
+header .subtitle {
+    margin-top: 8px;
+    font-size: 0.95rem;
+    color: #9cbaff;
+    letter-spacing: 0.04em;
 }
 
 @keyframes glowingTitle {
@@ -112,18 +122,18 @@ p {
 }
 
 .contact-title {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: #9cbaff;
     margin-bottom: 14px;
 }
 
-/* Ícones lado a lado */
+/* instagram e gmail lado a lado */
 .contact-row {
     display: flex;
     justify-content: center;
     gap: 40px;
     flex-wrap: wrap;
-    margin-top: 10px;
+    margin-top: 8px;
 }
 
 .contact-item {
@@ -134,19 +144,21 @@ p {
     font-size: 1rem;
 }
 
-.contact-item img {
+/* ícone SVG dentro do span */
+.contact-icon {
     width: 26px;
     height: 26px;
-    object-fit: contain;
-    filter: drop-shadow(0 0 4px #2844ff);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.contact-item a {
+.contact-link {
     color: #9cbaff;
     text-decoration: none;
 }
 
-.contact-item a:hover {
+.contact-link:hover {
     color: #cfe0ff;
     text-decoration: underline;
 }
@@ -176,6 +188,7 @@ p {
     display: block;
     border: none;
     box-shadow: 0 0 18px rgba(70,110,255,0.7);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .btn-more {
@@ -184,6 +197,13 @@ p {
     border: 1px solid #2844ff;
     cursor: pointer;
     box-shadow: 0 0 10px rgba(40,68,255,0.5);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn-buy:hover,
+.btn-more:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 0 20px rgba(80,120,255,0.9);
 }
 
 /* ===== Gaveta da sinopse ===== */
@@ -213,7 +233,8 @@ p {
 footer {
     text-align: center;
     padding: 20px;
-    opacity: 0.5;
+    opacity: 0.6;
+    font-size: 0.9rem;
 }
 
 /* ===== MOBILE ===== */
@@ -243,7 +264,7 @@ footer {
     }
 
     .contact-row {
-        gap: 25px;
+        gap: 24px;
     }
 
     h2 {
@@ -263,7 +284,7 @@ footer {
 
     .section {
         margin: 25px 10px;
-       : 15px;
+        padding: 15px;
     }
 
     .book-cover {
@@ -271,7 +292,7 @@ footer {
     }
 
     .contact-row {
-        gap: 20px;
+        gap: 18px;
     }
 }
 
@@ -282,6 +303,7 @@ footer {
 
 <header>
     <h1 class="glitch" data-text="PÁGINA DO AUTOR">PÁGINA DO AUTOR</h1>
+    <div class="subtitle">Autor de Dark Fantasy • Ficção Científica • Contos</div>
     <div class="runes">ᚠ ᛞ ᚨ ᛉ ᚾ ᚱ ᚲ ᛃ ᛟ</div>
 </header>
 
@@ -294,7 +316,7 @@ footer {
     <p>
         Michaell M. Vianna, ou Mike, tem 25 anos, é graduado em Física e especializado em ensino de Matemática e Física. Atuou como professor e hoje trabalha com projetos educacionais em uma ONG. Apaixonado pelas ciências da natureza, encontrou na escrita uma forma de transformar conhecimento em imaginação — criando universos onde fantasia e ciência se entrelaçam.
         <br><br>
-        “Zero — O Presságio da Escuridão” é seu livro de estreia e o primeiro volume de uma trilogia. Mike escreve ficção, fantasia e contos misturando conceitos científicos com mundos inventados, sempre explorando o desconhecido, o impossível e o que há de mais humano dentro do caos.
+        “Zero — O Presságio da Escuridão” é seu livro de estreia e o primeiro volume de uma trilogia. Michaell M. Vianna escreve ficção, fantasia e contos misturando conceitos científicos com mundos inventados, sempre explorando o desconhecido, o impossível e o que há de mais humano dentro do caos.
     </p>
 
     <!-- CONTATOS -->
@@ -305,18 +327,41 @@ footer {
 
             <!-- Instagram -->
             <div class="contact-item">
-                <a href="https://www.instagram.com/michaellvianna.autor/" target="_blank">
-                    <img src="insta.png" alt="Instagram">
+                <a class="contact-link" href="https://www.instagram.com/michaellvianna.autor/" target="_blank">
+                    <span class="contact-icon">
+                        <!-- Ícone Instagram SVG -->
+                        <svg viewBox="0 0 24 24" width="22" height="22" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="igGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#8ab0ff"/>
+                                    <stop offset="100%" stop-color="#2a4bff"/>
+                                </linearGradient>
+                            </defs>
+                            <rect x="3" y="3" width="18" height="18" rx="5" ry="5"
+                                  fill="none" stroke="url(#igGrad)" stroke-width="1.6"/>
+                            <circle cx="12" cy="12" r="4.2"
+                                    fill="none" stroke="#8ab0ff" stroke-width="1.6"/>
+                            <circle cx="16.4" cy="7.6" r="1.1" fill="#8ab0ff"/>
+                        </svg>
+                    </span>
                 </a>
                 <a class="contact-link" href="https://www.instagram.com/michaellvianna.autor/" target="_blank">
                     @michaellvianna.autor
                 </a>
             </div>
 
-            <!-- E-mail -->
+            <!-- Gmail -->
             <div class="contact-item">
-                <a href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcRzBxxrtgrhMWSXQwqhsDgtBqkhFFdJtmCPjxlPXlcLxVfwSLhCMHBhQkSJzntrWqXbNhKDv" target="_blank">
-                    <img src="gmail.png" alt="E-mail">
+                <a class="contact-link" href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcRzBxxrtgrhMWSXQwqhsDgtBqkhFFdJtmCPjxlPXlcLxVfwSLhCMHBhQkSJzntrWqXbNhKDv" target="_blank">
+                    <span class="contact-icon">
+                        <!-- Ícone Gmail SVG -->
+                        <svg viewBox="0 0 24 24" width="22" height="22" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="3" y="5" width="18" height="14" rx="2" ry="2"
+                                  fill="none" stroke="#8ab0ff" stroke-width="1.5"/>
+                            <polyline points="4,7 12,12 20,7"
+                                      fill="none" stroke="#2a4bff" stroke-width="1.5"/>
+                        </svg>
+                    </span>
                 </a>
                 <a class="contact-link" href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcRzBxxrtgrhMWSXQwqhsDgtBqkhFFdJtmCPjxlPXlcLxVfwSLhCMHBhQkSJzntrWqXbNhKDv" target="_blank">
                     micchaellv@gmail.com
@@ -367,7 +412,7 @@ footer {
 </div>
 
 <footer>
-    © direitos reservados
+    © 2026 — Michaell M. Vianna. Todos os direitos reservados.
 </footer>
 
 <script>
