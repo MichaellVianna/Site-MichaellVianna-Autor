@@ -175,33 +175,65 @@
     </p>
 </div>
 
-<!-- SEÇÃO MEU LIVRO -->
+<!-- SEÇÃO LIVROS DO AUTOR -->
 <div class="section">
-    <h2>Meu Livro</h2>
+    <h2 style="text-align: center;">Livros do Autor</h2>
 
-    <h3>O Presságio da Escuridão<br><span style="font-size: 1rem; color: #9ab0ff;">Trilogia Zero — Livro 01</span></h3>
+    <div style="text-align: center;">
+        <h3 style="margin-bottom: 5px;">O Presságio da Escuridão</h3>
+        <div style="font-size: 1rem; color: #9ab0ff; margin-bottom: 20px;">
+            Trilogia Zero — Livro 01
+        </div>
 
-    <img src="capalivro1.jpg" alt="Capa do livro" class="book-cover">
-
-    <div class="buttons">
-        <a href="https://flyve.com.br/1160/o-press-gio-da-escurid-o" class="btn-buy" target="_blank">
-            Compre aqui
-        </a>
-
-        <button class="btn-more" onclick="toggleSinopse()">
-            Saiba mais
-        </button>
+        <img src="capalivro1.jpg" alt="Capa do livro" class="book-cover">
     </div>
 
-    <div id="sinopse" style="display: none; margin-top: 20px; line-height: 1.6;">
-        Eve Velírion é um jovem órfão de guerra, que busca vingança pela morte dos pais. Empenhado em punir os que o fizeram sofrer, ele trilha um caminho desconhecido através do continente. Sua coragem e ousadia lhe trazem um entendimento aprofundado sobre a guerra. No entanto, em certo momento, ele percebe que o mundo é muito mais complexo do que uma simples vingança, e tudo isso está diretamente entrelaçado com seu misterioso poder.
+    <div class="buttons-vertical" style="margin-top: 20px; display: flex; flex-direction: column; gap: 12px; align-items: center;">
+
+        <a href="https://flyve.com.br/1160/o-press-gio-da-escurid-o" 
+           class="btn-buy" 
+           target="_blank"
+           style="width: 200px; text-align: center;">
+           Compre aqui
+        </a>
+
+        <button class="btn-more" 
+                onclick="toggleSinopse()"
+                style="width: 200px;">
+            Saiba mais
+        </button>
+
+    </div>
+
+    <!-- Gaveta animada -->
+    <div id="sinopse" 
+         style="
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease;
+            margin-top: 15px;
+            line-height: 1.6;
+         ">
+        <p>
+            Eve Velírion é um jovem órfão de guerra, que busca vingança pela morte dos pais. 
+            Empenhado em punir os que o fizeram sofrer, ele trilha um caminho desconhecido 
+            através do continente. Sua coragem e ousadia lhe trazem um entendimento aprofundado 
+            sobre a guerra. No entanto, em certo momento, ele percebe que o mundo é muito mais 
+            complexo do que uma simples vingança, e tudo isso está diretamente entrelaçado com 
+            seu misterioso poder.
+        </p>
     </div>
 </div>
 
 <script>
 function toggleSinopse() {
-    var x = document.getElementById("sinopse");
-    x.style.display = (x.style.display === "none") ? "block" : "none";
+    var box = document.getElementById("sinopse");
+
+    if (box.style.maxHeight === "0px" || box.style.maxHeight === "0") {
+        box.style.maxHeight = "300px";  // abre a gaveta
+    } else {
+        box.style.maxHeight = "0";      // fecha a gaveta
+    }
 }
 </script>
 
