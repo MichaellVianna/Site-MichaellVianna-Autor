@@ -105,26 +105,50 @@ p {
 /* ===== CONTATO ===== */
 
 .contact-box {
-    margin-top: 30px;
-    padding: 15px 20px;
+    margin-top: 35px;
+    padding-top: 20px;
     border-top: 1px solid #2a2f44;
     text-align: center;
-    font-size: 1rem;
+}
+
+.contact-title {
+    font-size: 1.2rem;
+    color: #9cbaff;
+    margin-bottom: 14px;
+}
+
+/* Ícones lado a lado */
+.contact-row {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 10px;
 }
 
 .contact-item {
-    margin: 8px 0;
     display: flex;
-    justify-content: center;
     align-items: center;
     gap: 8px;
     color: #9cbaff;
+    font-size: 1rem;
 }
 
-.contact-icon {
-    font-size: 1.4rem;
-    color: #7da2ff;
-    text-shadow: 0 0 5px #2844ff;
+.contact-item img {
+    width: 26px;
+    height: 26px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 4px #2844ff);
+}
+
+.contact-item a {
+    color: #9cbaff;
+    text-decoration: none;
+}
+
+.contact-item a:hover {
+    color: #cfe0ff;
+    text-decoration: underline;
 }
 
 /* ===== LIVRO ===== */
@@ -218,6 +242,10 @@ footer {
         padding: 12px;
     }
 
+    .contact-row {
+        gap: 25px;
+    }
+
     h2 {
         font-size: 1.6rem;
     }
@@ -235,11 +263,15 @@ footer {
 
     .section {
         margin: 25px 10px;
-        padding: 15px;
+       : 15px;
     }
 
     .book-cover {
         width: 90%;
+    }
+
+    .contact-row {
+        gap: 20px;
     }
 }
 
@@ -267,17 +299,31 @@ footer {
 
     <!-- CONTATOS -->
     <div class="contact-box">
+        <div class="contact-title">Entre em contato com o autor:</div>
 
-        <div class="contact-item">
-            <span class="contact-icon">📸</span>
-            <span>@michaellvianna.autor</span>
+        <div class="contact-row">
+
+            <!-- Instagram -->
+            <div class="contact-item">
+                <a href="https://www.instagram.com/michaellvianna.autor/" target="_blank">
+                    <img src="insta.png" alt="Instagram">
+                </a>
+                <a class="contact-link" href="https://www.instagram.com/michaellvianna.autor/" target="_blank">
+                    @michaellvianna.autor
+                </a>
+            </div>
+
+            <!-- E-mail -->
+            <div class="contact-item">
+                <a href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcRzBxxrtgrhMWSXQwqhsDgtBqkhFFdJtmCPjxlPXlcLxVfwSLhCMHBhQkSJzntrWqXbNhKDv" target="_blank">
+                    <img src="gmail.png" alt="E-mail">
+                </a>
+                <a class="contact-link" href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcRzBxxrtgrhMWSXQwqhsDgtBqkhFFdJtmCPjxlPXlcLxVfwSLhCMHBhQkSJzntrWqXbNhKDv" target="_blank">
+                    micchaellv@gmail.com
+                </a>
+            </div>
+
         </div>
-
-        <div class="contact-item">
-            <span class="contact-icon">✉️</span>
-            <span>micchaellv@gmail.com</span>
-        </div>
-
     </div>
 
 </div>
