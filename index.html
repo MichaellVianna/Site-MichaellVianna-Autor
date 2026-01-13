@@ -5,51 +5,76 @@
 <title>Página do Autor – Dark Fantasy & Cyberpunk</title>
 
 <style>
-
     body {
         margin: 0;
         font-family: 'Cinzel', serif;
-        background: #0a0c12;
+        background: radial-gradient(circle at top, #07101c 0%, #02040a 45%, #000000 100%);
         color: #d1d1d1;
         overflow-x: hidden;
         position: relative;
     }
 
-    /* Fundo Tech + Runas */
+    /* Fundo tech: linhas + brilhos */
     body::before {
         content: "";
         position: fixed;
-        top: 0; left: 0;
-        width: 100%; height: 100%;
+        inset: 0;
         pointer-events: none;
         background:
-            radial-gradient(circle at 20% 20%, rgba(40,60,120,0.08), transparent 60%),
-            radial-gradient(circle at 80% 70%, rgba(20,40,90,0.08), transparent 60%),
+            radial-gradient(circle at 10% 20%, rgba(0,255,180,0.08) 0, transparent 40%),
+            radial-gradient(circle at 80% 60%, rgba(0,180,255,0.10) 0, transparent 45%),
             repeating-linear-gradient(
-                to bottom,
-                rgba(255,255,255,0.02) 0px,
-                rgba(255,255,255,0.02) 1px,
-                transparent 2px
+                to right,
+                rgba(0, 200, 255, 0.25) 0px,
+                rgba(0, 200, 255, 0.25) 2px,
+                transparent 2px,
+                transparent 80px
+            ),
+            repeating-linear-gradient(
+                to right,
+                rgba(0, 150, 255, 0.2) 0px,
+                rgba(0, 150, 255, 0.2) 1px,
+                transparent 1px,
+                transparent 40px
             );
-        opacity: 0.25;
-        z-index: 999;
+        mix-blend-mode: screen;
+        opacity: 0.35;
+        animation: scanLines 16s linear infinite;
+        z-index: -1;
     }
 
-    /* Runas espalhadas */
+    /* Runas / binário na lateral */
     body::after {
-        content: "ᚠ ᛉ ᚨ ᛃ ᛟ ᚾ ᚱ";
+        content: "ᚠ ᛉ ᚨ ᛃ ᛟ ᚾ ᚱ 101010 110010 101101";
         position: fixed;
-        bottom: 10%; right: 5%;
-        font-size: 2rem;
-        opacity: 0.07;
-        color: #6f8cff;
-        letter-spacing: 18px;
-        animation: floatingRunes 12s ease-in-out infinite alternate;
+        top: 10%;
+        left: 3%;
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+        font-size: 1.3rem;
+        letter-spacing: 10px;
+        opacity: 0.09;
+        color: #6f9dff;
+        text-shadow: 0 0 12px rgba(80,160,255,0.8);
+        animation: floatCode 18s ease-in-out infinite alternate;
+        pointer-events: none;
+        z-index: -1;
     }
 
-    @keyframes floatingRunes {
-        0% { transform: translateY(0); opacity: 0.06; }
-        100% { transform: translateY(-25px); opacity: 0.10; }
+    @keyframes scanLines {
+        0%   { transform: translateX(0); }
+        100% { transform: translateX(-120px); }
+    }
+
+    @keyframes floatCode {
+        0% {
+            transform: translateY(0);
+            opacity: 0.06;
+        }
+        100% {
+            transform: translateY(-40px);
+            opacity: 0.14;
+        }
     }
 
     header {
@@ -89,10 +114,10 @@
         max-width: 900px;
         margin: 60px auto;
         padding: 25px;
-        background: rgba(15, 15, 25, 0.55);
+        background: rgba(15, 15, 25, 0.78);
         border: 1px solid #1e1e1e;
         border-radius: 8px;
-        box-shadow: 0 0 20px rgba(0, 20, 60, 0.25);
+        box-shadow: 0 0 20px rgba(0, 20, 60, 0.4);
     }
 
     h2 {
@@ -145,22 +170,23 @@
         cursor: pointer;
     }
 
-    /* Animação Cyberpunk da Gaveta */
+    /* Gaveta cyberpunk */
     #sinopse {
         max-height: 0;
         overflow: hidden;
         opacity: 0;
         transform: translateY(-10px);
         transition:
-            max-height 0.5s ease,
-            opacity 0.4s ease,
-            transform 0.4s ease;
-        border-left: 2px solid #3e52ff55;
+            max-height 0.45s cubic-bezier(0.19, 1, 0.22, 1),
+            opacity 0.35s ease-out,
+            transform 0.35s ease-out;
+        border-left: 2px solid rgba(0, 180, 255, 0.4);
+        box-shadow: inset 0 0 12px rgba(0, 140, 255, 0.25);
         padding-left: 10px;
     }
 
     #sinopse.open {
-        max-height: 500px;
+        max-height: 520px;
         opacity: 1;
         transform: translateY(0);
     }
@@ -170,7 +196,6 @@
         padding: 20px;
         opacity: 0.5;
     }
-
 </style>
 </head>
 
@@ -185,7 +210,7 @@
 <div class="section">
     <h2>Sobre</h2>
 
-    <img src="Autor.jpg" class="author-photo">
+    <img src="Autor.jpg" alt="Foto do autor" class="author-photo">
 
     <p>
         Michaell M. Vianna, ou Mike, tem 25 anos, é graduado em Física e especializado em ensino de Matemática e Física. Atuou como professor e hoje trabalha com projetos educacionais em uma ONG. Apaixonado pelas ciências da natureza, encontrou na escrita uma forma de transformar conhecimento em imaginação — criando universos onde fantasia e ciência se entrelaçam.
@@ -194,7 +219,7 @@
     </p>
 </div>
 
-<!-- LIVROS -->
+<!-- LIVROS DO AUTOR -->
 <div class="section">
 
     <h2 style="text-align:center;">Livros do Autor</h2>
@@ -205,7 +230,7 @@
             Trilogia Zero — Livro 01
         </div>
 
-        <img src="capalivro1.jpg" class="book-cover">
+        <img src="capalivro1.jpg" alt="Capa do livro" class="book-cover">
     </div>
 
     <div style="margin-top:20px;display:flex;flex-direction:column;gap:12px;align-items:center;">
