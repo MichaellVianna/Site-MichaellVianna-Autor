@@ -5,240 +5,186 @@
 <title>Página do Autor – Dark Fantasy & Cyberpunk</title>
 
 <style>
-    /* ===== BASE ===== */
 
-    body {
-        margin: 0;
-        font-family: 'Cinzel', serif;
-        background: radial-gradient(circle at top, #08101e 0%, #02040a 55%, #000000 100%);
-        color: #d1d1d1;
-        overflow-x: hidden;
-        position: relative;
-        min-height: 100vh;
-    }
+/* ===== BASE ===== */
 
-    /* Remove aquelas linhas chatas e deixa só um "ruído" leve */
-    body::before {
-        content: "";
-        position: fixed;
-        inset: 0;
-        pointer-events: none;
-        background:
-            radial-gradient(circle at 20% 20%, rgba(40,80,160,0.12), transparent 55%),
-            radial-gradient(circle at 80% 80%, rgba(20,60,140,0.10), transparent 55%),
-            radial-gradient(circle at 50% 120%, rgba(0,0,0,0.8), transparent 70%);
-        opacity: 0.65;
-        z-index: -2;
-    }
+body {
+    margin: 0;
+    font-family: 'Cinzel', serif;
+    background: radial-gradient(circle at top, #08101e 0%, #02040a 55%, #000000 100%);
+    color: #d1d1d1;
+    overflow-x: hidden;
+    position: relative;
+    min-height: 100vh;
+}
 
-    /* ===== CHUVA DE CÓDIGOS + RUNAS NAS LATERAIS ===== */
+/* fundo suave sem linhas */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(40,80,160,0.12), transparent 55%),
+        radial-gradient(circle at 80% 80%, rgba(20,60,140,0.10), transparent 55%),
+        radial-gradient(circle at 50% 120%, rgba(0,0,0,0.8), transparent 70%);
+    opacity: 0.65;
+    z-index: -1;
+}
 
-    .code-column {
-        position: fixed;
-        top: -100vh;                 /* começa fora da tela pra cair */
-        width: 90px;
-        height: 300vh;               /* bem maior que a tela pra dar efeito de queda contínua */
-        pointer-events: none;
-        font-family: monospace;
-        font-size: 1rem;
-        color: #39ffb6;
-        opacity: 0.12;
-        z-index: -1;
-        white-space: pre;
-        filter: blur(0.2px);
-        animation: fall 12s linear infinite;
-    }
+/* ===== HEADER ===== */
 
-    .code-column.right {
-        right: 0;
-        text-align: left;
-    }
+header {
+    padding: 50px 20px;
+    text-align: center;
+    background: linear-gradient(90deg, #001627, #000, #001627);
+    border-bottom: 1px solid #1a1a1a;
+}
 
-    .code-column.left {
-        left: 0;
-        text-align: right;
-    }
+header h1 {
+    font-size: 3rem;
+    color: #73a5ff;
+    text-shadow: 0 0 15px #3f5dff, 0 0 30px #1f2aff;
+    animation: glowingTitle 4s ease-in-out infinite;
+}
 
-    /* leve variação entre as colunas */
-    .code-column.left {
-        animation-duration: 14s;
-        animation-delay: -3s;
-        opacity: 0.10;
-    }
-    .code-column.right {
-        animation-duration: 11s;
-        animation-delay: -6s;
-        opacity: 0.14;
-    }
+@keyframes glowingTitle {
+    0%, 100% { text-shadow: 0 0 10px #294bff; }
+    50%      { text-shadow: 0 0 25px #7aa3ff; }
+}
 
-    @keyframes fall {
-        0% {
-            transform: translateY(0) rotate(0deg);
-        }
-        100% {
-            transform: translateY(100vh) rotate(4deg);
-        }
-    }
+.runes {
+    font-family: monospace;
+    font-size: 1rem;
+    opacity: 0.7;
+    margin-top: 12px;
+    letter-spacing: 6px;
+    animation: runeGlow 6s infinite ease-in-out;
+}
 
-    /* elementos internos (cada "linha" de código) girando um pouco */
-    .code-char {
-        display: block;
-        animation: spin 6s ease-in-out infinite alternate;
-    }
+@keyframes runeGlow {
+    0%, 100% { color: #4460ff; text-shadow: 0 0 5px #2336ff; }
+    50%      { color: #8ab0ff; text-shadow: 0 0 15px #4d66ff; }
+}
 
-    @keyframes spin {
-        0%   { transform: rotate(-6deg); }
-        100% { transform: rotate(6deg); }
-    }
+/* ===== SEÇÕES ===== */
 
-    header {
-        padding: 50px 20px;
-        text-align: center;
-        background: linear-gradient(90deg, #001627, #000, #001627);
-        border-bottom: 1px solid #1a1a1a;
-    }
+.section {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 25px;
+    background: rgba(10, 12, 22, 0.8);
+    border: 1px solid #1e1e1e;
+    border-radius: 8px;
+    box-shadow: 0 0 28px rgba(10, 30, 80, 0.55);
+}
 
-    header h1 {
-        font-size: 3rem;
-        color: #73a5ff;
-        text-shadow: 0 0 15px #3f5dff, 0 0 30px #1f2aff;
-        animation: glowingTitle 4s ease-in-out infinite;
-    }
+h2 {
+    color: #7da2ff;
+    text-shadow: 0 0 10px #2844ff;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
 
-    @keyframes glowingTitle {
-        0%, 100% { text-shadow: 0 0 10px #294bff; }
-        50%      { text-shadow: 0 0 25px #7aa3ff; }
-    }
+p {
+    text-align: justify;
+}
 
-    .runes {
-        font-family: monospace;
-        font-size: 1rem;
-        opacity: 0.7;
-        margin-top: 12px;
-        letter-spacing: 6px;
-        animation: runeGlow 6s infinite ease-in-out;
-    }
+/* ===== FOTO DO AUTOR ===== */
 
-    @keyframes runeGlow {
-        0%, 100% { color: #4460ff; text-shadow: 0 0 5px #2336ff; }
-        50%      { color: #8ab0ff; text-shadow: 0 0 15px #4d66ff; }
-    }
+.author-photo {
+    width: 180px;
+    border-radius: 50%;
+    border: 3px solid #2f3cff;
+    box-shadow: 0 0 20px rgba(80,100,255,0.6), 0 0 40px rgba(60,80,255,0.3);
+    display: block;
+    margin: 0 auto 20px auto;
+    object-fit: cover;
+}
 
+/* ===== LIVRO ===== */
+
+.book-cover {
+    width: 260px;
+    border: 2px solid #2a2a3a;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    box-shadow: 0 0 30px rgba(60,80,255,0.7);
+}
+
+.btn-buy, .btn-more {
+    padding: 10px 20px;
+    border-radius: 6px;
+    width: 220px;
+    text-align: center;
+    font-family: inherit;
+}
+
+.btn-buy {
+    background: linear-gradient(90deg, #2a4bff, #476cff);
+    color: white;
+    text-decoration: none;
+    display: block;
+    border: none;
+    box-shadow: 0 0 18px rgba(70,110,255,0.7);
+}
+
+.btn-more {
+    background: #11131b;
+    color: #7da2ff;
+    border: 1px solid #2844ff;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(40,68,255,0.5);
+}
+
+/* ===== Gaveta da sinopse ===== */
+
+#sinopse {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition:
+        max-height 0.5s ease,
+        opacity 0.4s ease,
+        transform 0.4s ease;
+    border-left: 2px solid #3e52ff55;
+    padding-left: 10px;
+    margin-top: 10px;
+}
+
+#sinopse.open {
+    max-height: 500px;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ===== FOOTER ===== */
+
+footer {
+    text-align: center;
+    padding: 20px;
+    opacity: 0.5;
+}
+
+/* ===== Responsivo ===== */
+
+@media (max-width: 768px) {
     .section {
-        max-width: 900px;
-        margin: 60px auto;
-        padding: 25px;
-        background: rgba(10, 12, 22, 0.8);
-        border: 1px solid #1e1e1e;
-        border-radius: 8px;
-        box-shadow: 0 0 28px rgba(10, 30, 80, 0.55);
+        margin: 30px 10px;
     }
-
-    h2 {
-        color: #7da2ff;
-        text-shadow: 0 0 10px #2844ff;
-        font-size: 2rem;
-        margin-bottom: 10px;
-    }
-
-    p {
-        text-align: justify;
-    }
-
-    .author-photo {
-        width: 180px;
-        border-radius: 50%;
-        border: 3px solid #2f3cff;
-        box-shadow: 0 0 20px rgba(80,100,255,0.6), 0 0 40px rgba(60,80,255,0.3);
-        display: block;
-        margin: 0 auto 20px auto;
-        object-fit: cover;
-    }
-
     .book-cover {
-        width: 260px;
-        border: 2px solid #2a2a3a;
-        border-radius: 4px;
-        margin-bottom: 15px;
-        box-shadow: 0 0 30px rgba(60,80,255,0.7);
+        width: 70%;
     }
-
     .btn-buy, .btn-more {
-        padding: 10px 20px;
-        border-radius: 6px;
-        width: 220px;
-        text-align: center;
-        font-family: inherit;
+        width: 100%;
     }
+}
 
-    .btn-buy {
-        background: linear-gradient(90deg, #2a4bff, #476cff);
-        color: white;
-        text-decoration: none;
-        display: block;
-        border: none;
-        box-shadow: 0 0 18px rgba(70,110,255,0.7);
-    }
-
-    .btn-more {
-        background: #11131b;
-        color: #7da2ff;
-        border: 1px solid #2844ff;
-        cursor: pointer;
-        box-shadow: 0 0 10px rgba(40,68,255,0.5);
-    }
-
-    /* Gaveta animada cyberpunk */
-
-    #sinopse {
-        max-height: 0;
-        overflow: hidden;
-        opacity: 0;
-        transform: translateY(-10px);
-        transition:
-            max-height 0.5s ease,
-            opacity 0.4s ease,
-            transform 0.4s ease;
-        border-left: 2px solid #3e52ff55;
-        padding-left: 10px;
-        margin-top: 10px;
-    }
-
-    #sinopse.open {
-        max-height: 500px;
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    footer {
-        text-align: center;
-        padding: 20px;
-        opacity: 0.5;
-    }
-
-    /* Responsivo simples */
-    @media (max-width: 768px) {
-        .section {
-            margin: 30px 10px;
-        }
-        .book-cover {
-            width: 70%;
-        }
-        .btn-buy, .btn-more {
-            width: 100%;
-        }
-        .code-column {
-            display: none; /* se quiser, some com o efeito no mobile pra não poluir */
-        }
-    }
 </style>
 </head>
 
 <body>
-
-<!-- Colunas laterais de código/runas -->
-<div class="code-column left" id="codeLeft"></div>
-<div class="code-column right" id="codeRight"></div>
 
 <header>
     <h1 class="glitch" data-text="PÁGINA DO AUTOR">PÁGINA DO AUTOR</h1>
@@ -305,39 +251,6 @@ function toggleSinopse() {
     let box = document.getElementById("sinopse");
     box.classList.toggle("open");
 }
-
-/* Gera texto de código + runas nas colunas laterais */
-function generateCodeString(length) {
-    const chars = "01";
-    const runes = ["ᚠ","ᛞ","ᚨ","ᛉ","ᚾ","ᚱ","ᚲ","ᛃ","ᛟ"];
-    let result = "";
-    for (let i = 0; i < length; i++) {
-        if (Math.random() < 0.06) {
-            result += runes[Math.floor(Math.random() * runes.length)];
-        } else {
-            result += chars[Math.floor(Math.random() * chars.length)];
-        }
-        result += "\n";
-    }
-    return result;
-}
-
-function fillCodeColumn(id) {
-    const el = document.getElementById(id);
-    const str = generateCodeString(80); // 80 "linhas"
-    const lines = str.split("\n");
-    el.innerHTML = "";
-    lines.forEach(line => {
-        if (!line) return;
-        const span = document.createElement("span");
-        span.className = "code-char";
-        span.textContent = line;
-        el.appendChild(span);
-    });
-}
-
-fillCodeColumn("codeLeft");
-fillCodeColumn("codeRight");
 </script>
 
 </body>
