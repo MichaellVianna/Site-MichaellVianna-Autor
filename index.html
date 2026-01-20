@@ -1,16 +1,13 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
 <title>Página do Autor – Dark Fantasy & Cyberpunk</title>
-
 <meta name="description" content="Michaell M. Vianna, autor de Dark Fantasy e Ficção Científica. Conheça Zero — O Presságio da Escuridão e outras obras, sinopses e formas de contato.">
-
+<!-- Favicon adicionado -->
+<link rel="icon" href="favicon.png" type="image/png">
 <style>
-
 /* ===== BASE ===== */
-
 body {
     margin: 0;
     font-family: 'Cinzel', serif;
@@ -20,7 +17,6 @@ body {
     position: relative;
     min-height: 100vh;
 }
-
 /* fundo suave sem linhas */
 body::before {
     content: "";
@@ -34,16 +30,13 @@ body::before {
     opacity: 0.65;
     z-index: -1;
 }
-
 /* ===== HEADER ===== */
-
 header {
     padding: 40px 20px 35px;
     text-align: center;
     background: linear-gradient(90deg, #001627, #000, #001627);
     border-bottom: 1px solid #1a1a1a;
 }
-
 header h1 {
     font-size: 3rem;
     color: #73a5ff;
@@ -51,19 +44,16 @@ header h1 {
     animation: glowingTitle 4s ease-in-out infinite;
     margin: 0;
 }
-
 header .subtitle {
     margin-top: 8px;
     font-size: 0.95rem;
     color: #9cbaff;
     letter-spacing: 0.04em;
 }
-
 @keyframes glowingTitle {
     0%, 100% { text-shadow: 0 0 10px #294bff; }
-    50%      { text-shadow: 0 0 25px #7aa3ff; }
+    50% { text-shadow: 0 0 25px #7aa3ff; }
 }
-
 .runes {
     font-family: monospace;
     font-size: 1rem;
@@ -72,14 +62,11 @@ header .subtitle {
     letter-spacing: 6px;
     animation: runeGlow 6s infinite ease-in-out;
 }
-
 @keyframes runeGlow {
     0%, 100% { color: #4460ff; text-shadow: 0 0 5px #2336ff; }
-    50%      { color: #8ab0ff; text-shadow: 0 0 15px #4d66ff; }
+    50% { color: #8ab0ff; text-shadow: 0 0 15px #4d66ff; }
 }
-
 /* ===== SEÇÕES ===== */
-
 .section {
     max-width: 900px;
     margin: 60px auto;
@@ -89,20 +76,16 @@ header .subtitle {
     border-radius: 8px;
     box-shadow: 0 0 28px rgba(10, 30, 80, 0.55);
 }
-
 h2 {
     color: #7da2ff;
     text-shadow: 0 0 10px #2844ff;
     font-size: 2rem;
     margin-bottom: 10px;
 }
-
 p {
     text-align: justify;
 }
-
 /* ===== FOTO DO AUTOR ===== */
-
 .author-photo {
     width: 180px;
     border-radius: 50%;
@@ -112,22 +95,18 @@ p {
     margin: 0 auto 20px auto;
     object-fit: cover;
 }
-
 /* ===== CONTATO ===== */
-
 .contact-box {
     margin-top: 35px;
     padding-top: 20px;
     border-top: 1px solid #2a2f44;
     text-align: center;
 }
-
 .contact-title {
     font-size: 1.1rem;
     color: #9cbaff;
     margin-bottom: 14px;
 }
-
 /* instagram e gmail lado a lado */
 .contact-row {
     display: flex;
@@ -136,7 +115,6 @@ p {
     flex-wrap: wrap;
     margin-top: 8px;
 }
-
 .contact-item {
     display: flex;
     align-items: center;
@@ -144,7 +122,6 @@ p {
     color: #9cbaff;
     font-size: 1rem;
 }
-
 /* ícone SVG dentro do span */
 .contact-icon {
     width: 26px;
@@ -153,19 +130,15 @@ p {
     align-items: center;
     justify-content: center;
 }
-
 .contact-link {
     color: #9cbaff;
     text-decoration: none;
 }
-
 .contact-link:hover {
     color: #cfe0ff;
     text-decoration: underline;
 }
-
 /* ===== LIVRO ===== */
-
 .book-cover {
     width: 260px;
     border: 2px solid #2a2a3a;
@@ -173,7 +146,6 @@ p {
     margin-bottom: 15px;
     box-shadow: 0 0 30px rgba(60,80,255,0.7);
 }
-
 .btn-buy, .btn-more {
     padding: 10px 20px;
     border-radius: 6px;
@@ -181,7 +153,6 @@ p {
     text-align: center;
     font-family: inherit;
 }
-
 .btn-buy {
     background: linear-gradient(90deg, #2a4bff, #476cff);
     color: white;
@@ -191,7 +162,6 @@ p {
     box-shadow: 0 0 18px rgba(70,110,255,0.7);
     transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
-
 .btn-more {
     background: #11131b;
     color: #7da2ff;
@@ -200,15 +170,12 @@ p {
     box-shadow: 0 0 10px rgba(40,68,255,0.5);
     transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
-
 .btn-buy:hover,
 .btn-more:hover {
     transform: translateY(-1px);
     box-shadow: 0 0 20px rgba(80,120,255,0.9);
 }
-
 /* ===== Gaveta da sinopse ===== */
-
 #sinopse {
     max-height: 0;
     overflow: hidden;
@@ -222,110 +189,83 @@ p {
     padding-left: 10px;
     margin-top: 10px;
 }
-
 #sinopse.open {
     max-height: 500px;
     opacity: 1;
     transform: translateY(0);
 }
-
 /* ===== FOOTER ===== */
-
 footer {
     text-align: center;
     padding: 20px;
     opacity: 0.6;
     font-size: 0.9rem;
 }
-
 /* ===== MOBILE ===== */
-
 @media (max-width: 768px) {
-
     header h1 {
         font-size: 2.2rem;
     }
-
     .section {
         margin: 30px 10px;
         padding: 18px;
     }
-
     .author-photo {
         width: 140px;
     }
-
     .book-cover {
         width: 75%;
     }
-
     .btn-buy, .btn-more {
         width: 100%;
         padding: 12px;
     }
-
     .contact-row {
         gap: 24px;
     }
-
     h2 {
         font-size: 1.6rem;
     }
 }
-
 @media (max-width: 480px) {
-
     header h1 {
         font-size: 1.9rem;
     }
-
     h3 {
         font-size: 1.2rem;
     }
-
     .section {
         margin: 25px 10px;
         padding: 15px;
     }
-
     .book-cover {
         width: 90%;
     }
-
     .contact-row {
         gap: 18px;
     }
 }
-
 </style>
 </head>
-
 <body>
-
 <header>
     <h1 class="glitch" data-text="PÁGINA DO AUTOR">PÁGINA DO AUTOR</h1>
     <div class="subtitle">Autor de Dark Fantasy • Ficção Científica • Contos</div>
     <div class="runes">ᚠ ᛞ ᚨ ᛉ ᚾ ᚱ ᚲ ᛃ ᛟ</div>
 </header>
-
 <!-- SOBRE -->
 <div class="section">
     <h2>Sobre</h2>
-
     <img src="Autor.jpg" alt="Foto do autor" class="author-photo">
-
     <p>
         Michaell M. Vianna, ou Mike, tem 25 anos, é graduado em Física e especializado em ensino de Matemática e Física. Atuou como professor e hoje trabalha com projetos educacionais em uma ONG. Apaixonado pelas ciências da natureza, encontrou na escrita uma forma de transformar conhecimento em imaginação — criando universos onde fantasia e ciência se entrelaçam.
         <br><br>
-        “Zero — O Presságio da Escuridão” é seu livro de estreia e o primeiro volume de uma trilogia. Michaell M. Vianna escreve ficção, fantasia e contos misturando conceitos científicos com mundos inventados, sempre explorando o desconhecido, o impossível e o que há de mais humano dentro do caos.
+        "Zero — O Presságio da Escuridão" é seu livro de estreia e o primeiro volume de uma trilogia. Michaell M. Vianna escreve ficção, fantasia e contos misturando conceitos científicos com mundos inventados, sempre explorando o desconhecido, o impossível e o que há de mais humano dentro do caos.
     </p>
-
     <!-- CONTATOS -->
     <div class="contact-box">
         <div class="contact-title">Entre em contato com o autor:</div>
-
         <div class="contact-row">
-
             <!-- Instagram -->
             <div class="contact-item">
                 <a class="contact-link" href="https://www.instagram.com/michaellvianna.autor/" target="_blank">
@@ -350,7 +290,6 @@ footer {
                     @michaellvianna.autor
                 </a>
             </div>
-
             <!-- Gmail -->
             <div class="contact-item">
                 <a class="contact-link" href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcRzBxxrtgrhMWSXQwqhsDgtBqkhFFdJtmCPjxlPXlcLxVfwSLhCMHBhQkSJzntrWqXbNhKDv" target="_blank">
@@ -368,37 +307,28 @@ footer {
                     micchaellv@gmail.com
                 </a>
             </div>
-
         </div>
     </div>
-
 </div>
-
 <!-- LIVROS -->
 <div class="section">
-
     <h2 style="text-align:center;">Livros do Autor</h2>
-
     <div style="text-align:center;">
         <h3 style="margin-bottom:5px;">O Presságio da Escuridão</h3>
         <div style="font-size:1rem;color:#9ab0ff;margin-bottom:20px;">
             Trilogia Zero — Livro 01
         </div>
-
         <img src="capalivro1.jpg" alt="Capa do livro O Presságio da Escuridão" class="book-cover">
     </div>
-
     <div style="margin-top:20px;display:flex;flex-direction:column;gap:12px;align-items:center;">
         <a href="https://flyve.com.br/1160/o-press-gio-da-escurid-o"
            class="btn-buy" target="_blank">
            Compre aqui
         </a>
-
         <button class="btn-more" onclick="toggleSinopse()">
             Saiba mais
         </button>
     </div>
-
     <div id="sinopse">
         <p>
             Eve Velírion é um jovem órfão de guerra, que busca vingança pela morte dos pais.
@@ -409,19 +339,15 @@ footer {
             seu misterioso poder.
         </p>
     </div>
-
 </div>
-
 <footer>
     © 2026 — Michaell M. Vianna. Todos os direitos reservados.
 </footer>
-
 <script>
 function toggleSinopse() {
     let box = document.getElementById("sinopse");
     box.classList.toggle("open");
 }
 </script>
-
 </body>
 </html>
